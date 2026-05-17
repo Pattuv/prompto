@@ -1,2 +1,3 @@
-# promptFixer
-Make your prompts more polished in seconds.
+## promptFixer
+
+Make your prompts more robust with one click.
