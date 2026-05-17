@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
-*, html, body {
-  font-family: 'Instrument Sans', sans-serif;
+*,
+html,
+body {
+  font-family: "Instrument Sans", sans-serif;
 }
 
 html,
@@ -162,6 +164,15 @@ body {
   background: #f9fafb;
 }
 
+.pill-btn--active {
+  background: #a7c4ff;
+  border-color: #a7c4ff;
+}
+
+.pill-btn--active:hover {
+  background: #a7c4ff;
+}
+
 .enhance-btn {
   position: relative;
   display: inline-flex;
@@ -171,7 +182,7 @@ body {
   font-size: 0.8125rem;
   font-weight: 500;
   border-radius: 9999px;
-  border: none;
+  border: 2px solid #000;
   background-color: #000;
   color: #fff;
   cursor: pointer;
@@ -181,13 +192,13 @@ body {
 }
 
 .enhance-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   background-image: linear-gradient(
     to top,
-    #A7C4FF 0%,
+    #a7c4ff 0%,
     rgba(90, 145, 255, 0.45) 32%,
     rgba(0, 0, 0, 0) 62%
   );

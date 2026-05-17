@@ -1,12 +1,28 @@
-import Navbar from './components/Navbar';
-import CursorFollower from './components/CursorFollower';
-import StripedPattern from './components/StripedPattern';
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import CursorFollower from "./components/CursorFollower";
+import StripedPattern from "./components/StripedPattern";
+
+const PROMPT_PILLS = [
+  { id: "code", label: "Code", icon: "bi-braces", iconClass: "mr-1" },
+  { id: "image", label: "Image", icon: "bi-image", iconClass: "mr-2" },
+  { id: "video", label: "Video", icon: "bi-camera-reels", iconClass: "mr-2" },
+];
 
 function App() {
+  const [activePill, setActivePill] = useState(null);
+
+  const togglePill = (id) => {
+    setActivePill((current) => (current === id ? null : id));
+  };
   return (
     <div className="app-shell">
       <div className="app-shell__stripes" aria-hidden="true">
-        <StripedPattern className="text-neutral-400/25" width={10} height={10} />
+        <StripedPattern
+          className="text-neutral-400/25"
+          width={10}
+          height={10}
+        />
       </div>
 
       <CursorFollower />
@@ -32,15 +48,18 @@ function App() {
                 />
                 <div className="prompt-actions">
                   <div className="prompt-pills">
-                    <button type="button" className="pill-btn">
-                      Code
-                    </button>
-                    <button type="button" className="pill-btn">
-                      Image
-                    </button>
-                    <button type="button" className="pill-btn">
-                      Video
-                    </button>
+                    {PROMPT_PILLS.map(({ id, label, icon, iconClass }) => (
+                      <button
+                        key={id}
+                        type="button"
+                        className={`pill-btn${activePill === id ? " pill-btn--active" : ""}`}
+                        aria-pressed={activePill === id}
+                        onClick={() => togglePill(id)}
+                      >
+                        <i className={`bi ${icon} ${iconClass}`} aria-hidden="true" />
+                        {label}
+                      </button>
+                    ))}
                   </div>
                   <button type="button" className="enhance-btn">
                     <i className="bi bi-stars" aria-hidden="true" />
