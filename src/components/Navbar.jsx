@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emblem from '../assets/emblem.png';
 
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,10 +8,11 @@ function Navbar() {
     const closeMenu = () => setIsMenuOpen(false);
 
     return (
-        <div className="navbar bg-base-100 px-0 min-h-14 py-4">
-            <div className="flex-1">
-                <a className="btn btn-ghost text-base md:text-lg font-medium px-4">
-                    promptFixer
+        <div className="navbar bg-base-100 px-0 min-h-14 py-6 bg-transparent">
+            <div className="flex-1 flex items-center justify-start min-w-0">
+                <a href="/" className="navbar-brand">
+                    <img src={emblem} alt="" className="navbar-brand__emblem" />
+                    <span className="navbar-brand__title">prompto</span>
                 </a>
             </div>
 
