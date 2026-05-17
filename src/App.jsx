@@ -1,9 +1,14 @@
 import Navbar from './components/Navbar';
 import CursorFollower from './components/CursorFollower';
+import StripedPattern from './components/StripedPattern';
 
 function App() {
   return (
     <div className="app-shell">
+      <div className="app-shell__stripes" aria-hidden="true">
+        <StripedPattern className="text-neutral-400/25" width={10} height={10} />
+      </div>
+
       <CursorFollower />
 
       <div className="app-shell__content">
@@ -48,7 +53,7 @@ function App() {
         </main>
 
         <footer className="app-footer">
-          Crafted with <span className="text-red-500">❤️</span> by Pratyush
+          Crafted with <span className=" mx-1">❤︎⁠</span> by Pratyush
         </footer>
       </div>
     </div>

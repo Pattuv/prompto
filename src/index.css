@@ -9,10 +9,19 @@ body {
   height: 100dvh;
   margin: 0;
   overflow-y: hidden;
+  background-color: #fff;
 }
 
 body {
   padding-inline: clamp(2rem, 10vw + 1.5rem, 30rem);
+}
+
+.app-shell__stripes {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: #fff;
 }
 
 #root {
@@ -154,6 +163,7 @@ body {
 }
 
 .enhance-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
@@ -163,22 +173,31 @@ body {
   border-radius: 9999px;
   border: none;
   background-color: #000;
-  background-image: linear-gradient(to top, transparent 0%, transparent 100%);
   color: #fff;
   cursor: pointer;
   margin-left: auto;
   flex-shrink: 0;
-  transition: background-image 0.4s ease;
+  isolation: isolate;
 }
 
-.enhance-btn:hover {
-  background-color: #000;
+.enhance-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
   background-image: linear-gradient(
     to top,
-    #5a91ff 0%,
+    #A7C4FF 0%,
     rgba(90, 145, 255, 0.45) 32%,
     rgba(0, 0, 0, 0) 62%
   );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.enhance-btn:hover::before {
+  opacity: 1;
 }
 
 .prompt-glow {
