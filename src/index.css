@@ -211,6 +211,16 @@ body {
   opacity: 1;
 }
 
+.enhance-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.enhance-btn:disabled::before,
+.enhance-btn:disabled:hover::before {
+  opacity: 0;
+}
+
 .prompt-glow {
   position: absolute;
   left: 50%;
