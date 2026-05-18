@@ -1,17 +1,26 @@
 import Navbar2 from "../components/Navbar2";
+import loadingImg from "../assets/loading.png";
 
 function Enhance() {
   return (
-    <div className="app-shell">
+    <div className="app-shell text-center">
       <div className="app-shell__content page-fade-in">
         <Navbar2 />
 
-        <main className="app-main app-main--enhance">
-          <div className="app-main__content app-main__content--left">
-            <p className="text-sm font-medium px-1">
-              <i className="bi bi-stars mr-2 text-[#5a91ff]" aria-hidden="true" />
-              Enhanced Prompt
-            </p>
+        <main className="app-main">
+          <div
+            className="flex flex-col items-center"
+            role="status"
+            aria-live="polite"
+            aria-label="Enhancing prompt"
+          >
+            <img
+              src={loadingImg}
+              alt=""
+              className="w-20 h-auto"
+              aria-hidden="true"
+            />
+            <p className="text-xl font-semibold">Enhancing prompt...</p>
           </div>
         </main>
 

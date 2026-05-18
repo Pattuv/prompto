@@ -17,7 +17,7 @@ function Navbar2() {
             </div>
 
             <div className="hidden md:flex flex-none items-center gap-2">
-                <button type="button" className="btn rounded-full border-1 border-gray-300" aria-label="Regenerate">
+                <button type="button" className="btn rounded-full border-gray-300" aria-label="Regenerate">
                     <i className="bi bi-arrow-repeat mr-1" aria-hidden="true" /> Revise
                 </button>
                 <a href="/" type="button" className="btn rounded-full border border-gray-300" aria-label="Edit">
