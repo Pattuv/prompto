@@ -3,7 +3,7 @@ import Navbar2 from "../components/Navbar2";
 function Enhance() {
   return (
     <div className="app-shell">
-      <div className="app-shell__content">
+      <div className="app-shell__content page-fade-in">
         <Navbar2 />
 
         <main className="app-main app-main--enhance">

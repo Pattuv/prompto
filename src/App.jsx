@@ -37,7 +37,7 @@ function App() {
 
       <CursorFollower />
 
-      <div className="app-shell__content">
+      <div className="app-shell__content page-fade-in">
         <Navbar />
 
         <main className="app-main">
