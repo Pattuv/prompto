@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import emblem from '../assets/emblem.png';
 
-function Navbar2() {
+function Navbar2({ onRevise }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen((open) => !open);
@@ -17,7 +17,12 @@ function Navbar2() {
             </div>
 
             <div className="hidden md:flex flex-none items-center gap-2">
-                <button type="button" className="btn rounded-full border-gray-300" aria-label="Regenerate">
+                <button
+                    type="button"
+                    className="btn rounded-full border-gray-300"
+                    aria-label="Revise"
+                    onClick={onRevise}
+                >
                     <i className="bi bi-arrow-repeat mr-1" aria-hidden="true" /> Revise
                 </button>
                 <a href="/" type="button" className="btn rounded-full border border-gray-300" aria-label="Edit">
@@ -46,8 +51,11 @@ function Navbar2() {
                         <button
                             type="button"
                             className="custom-btn custom-btn--icon text-sm font-medium"
-                            aria-label="Regenerate"
-                            onClick={closeMenu}
+                            aria-label="Revise"
+                            onClick={() => {
+                                onRevise?.();
+                                closeMenu();
+                            }}
                             tabIndex={isMenuOpen ? 0 : -1}
                         >
                             <i className="bi bi-arrow-repeat" aria-hidden="true" /> Revise
